@@ -1,0 +1,82 @@
+body {
+  background: url("../images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+#root {
+  margin: 30px auto 0;
+  width: 660px;
+}
+#root .status {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  color: #f5f5f5;
+}
+#root .flip-container {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  font-size: 150px;
+}
+#root .flip-container,
+#root .front,
+#root .back {
+  width: 150px;
+  height: 150px;
+}
+#root .flip-container .flipper,
+#root .front .flipper,
+#root .back .flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+#root .flip-container .flipper.flipped,
+#root .front .flipper.flipped,
+#root .back .flipper.flipped {
+  transform: rotateY(180deg);
+}
+#root .flip-container .flipper .front,
+#root .front .flipper .front,
+#root .back .flipper .front,
+#root .flip-container .flipper .back,
+#root .front .flipper .back,
+#root .back .flipper .back {
+  box-shadow: 1px 1px 2px #000;
+  line-height: 150px;
+  border-radius: 10px;
+  text-align: center;
+  backface-visibility: hidden;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#root .flip-container .flipper .front,
+#root .front .flipper .front,
+#root .back .flipper .front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+#root .flip-container .flipper .back,
+#root .front .flipper .back,
+#root .back .flipper .back {
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+#root .randomImage {
+  width: 150px;
+  height: 150px;
+  background: black;
+  position: absolute;
+  top: 70%;
+  left: 46%;
+}
+
+#root .randomImage span{
+  position: absolute;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #f5f5f5;
+}
