@@ -158,7 +158,7 @@ export default class GameApp extends Component {
         let status = this.state.seconds > 0 ? this.state.seconds + ' s' : 'Find Correct Images';
         let statusObj = this.statusGenerator();
         if (statusObj.attempted > 0) {
-            status = ' [ ' + 'Attempted: ' + statusObj.attempted + ', Corrected: ' + statusObj.matched + ' ]';
+            status = ' { ' + 'Attempts: ' + statusObj.attempted + ', Corrects: ' + statusObj.matched + ' }';
         }
         return (
             <section id="main">
