@@ -18,7 +18,7 @@ export default class GameApp extends Component {
             message: 'Welcome to memory game',
             isWaiting: false,
             randomImage: '',
-            seconds: 5,
+            seconds: 10,
             randomImageSeconds: 10,
         });
         this.onTileClick = this.onTileClick.bind(this);
@@ -155,7 +155,7 @@ export default class GameApp extends Component {
             tiles.push(<Tile key={id} onTileClick={this.onTileClick} id={id} image={allTiles[id].image} flipped={allTiles[id].flipped} />);
         }
         let message = 'Find this image in above tiles (' + this.state.randomImageSeconds + ')';
-        let status = this.state.seconds > 0 ? this.state.seconds + ' s' : 'Find Correct Image';
+        let status = this.state.seconds > 0 ? this.state.seconds + ' s' : 'Find Correct Images';
         let statusObj = this.statusGenerator();
         if (statusObj.attempted > 0) {
             status = ' [ ' + 'Attempted: ' + statusObj.attempted + ', Corrected: ' + statusObj.matched + ' ]';
